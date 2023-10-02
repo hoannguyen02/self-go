@@ -1,3 +1,5 @@
+An interface type consists of a set of method signatures. A variable of interface type can hold any value that implements these methods.
+```
 package main
 
 import "fmt"
@@ -52,3 +54,4 @@ func (d *Gorilla) Says() string {
 func (d *Gorilla) NumberOfLegs() int {
 	return 2
 }
+```
