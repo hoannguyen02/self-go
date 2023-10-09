@@ -1,3 +1,13 @@
+Start docker local
+1. `docker pull redis`
+2. `docker run --name redis-test-instance -p 6379:6379 -d redis`
+
+Connect go with redis
+1. import go redis to the main: `github.com/go-redis/redis`
+2. initial go mod:
+- Initial module: `go mod init github.com/hoannguyen02/self-go` 
+- Run dependencies managements: `go mod tidy`
+```
 package main
 
 import (
@@ -72,5 +82,6 @@ func main() {
 
 	router.Run()
 
-
 }
+
+```
