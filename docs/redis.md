@@ -21,7 +21,7 @@ import (
 	"github.com/go-redis/redis"
 )	
 
-func getSessionId() (string, error) {
+func genSessionId() (string, error) {
 	b := make([]byte, 32)
 	if _, err := io.ReadFull(rand.Reader, b); err != nil {
 		return "", err
@@ -59,7 +59,7 @@ func main() {
 				ctx.JSON(http.StatusBadRequest, "")
 			}
 			// Generate session id
-			sessionId, err := getSessionId()
+			sessionId, err := genSessionId()
 			if err != nil {
 				ctx.JSON(http.StatusInternalServerError, "")
 			}
